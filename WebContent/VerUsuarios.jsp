@@ -51,7 +51,7 @@
       <td><%=usuario.getDni() %></td>
       <td><%=usuario.getCodigo() %></td>
       <td><a class="btn btn-primary" href="VerUsuario?id=<%=usuario.getId()%>">VER</a></td>
-      <td><a class="btn btn-primary" href="CrearUsuario?id=<%=usuario.getId()%>">CREAR</a></td>
+      <td><a class="btn btn-success" href="CrearUsuario?id=<%=usuario.getId()%>">CREAR</a></td>
       <td><a class="btn btn-danger" href="EliminarUsuario?id=<%=usuario.getId()%>">ELIMINAR</a></td>
     </tr>
     
