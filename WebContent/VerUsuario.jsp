@@ -1,13 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-    <%@page import="java.util.ArrayList" %>
-    <%@page import="modelo.bean.Actividad" %>
+    <%@ page import="modelo.bean.Usuario" %>
     
     
-   <%
-   		ArrayList<Actividad> actividades = (ArrayList<Actividad>)request.getAttribute("actividades");
-   %> 
+    <%
+		Usuario usuario = (Usuario)request.getAttribute("usuario");
+	%>
+	
+    
+    
+   
+    
+    
+    
+     
     
 <!doctype html>
 <html lang="en">
@@ -19,42 +25,32 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>ACTIVIDADES</title>
+    <title>VER USUARIO</title>
   </head>
   <body>
-    <h1 class="text-center">ACTIVIDADES</h1>
-	<table class="table table-dark">
-  <thead>
+  
+    
+    <table class="table">
+  <thead class="thead-dark">
     <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Fecha_inicio</th>
-      <th scope="col">Dias semana</th>
-      <th scope="col">
-      <th scope="col">Acciones
-      <th scope="col"></th>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre_Apellido</th>
+      <th scope="col">DNI</th>
+      <th scope="col">Codigo</th>
     </tr>
   </thead>
   <tbody>
   
-  <% for(int i = 0; i < actividades.size(); i++){
-	  Actividad actividad = actividades.get(i);
-	  
-	  %>
- 
     <tr>
-      <th scope="row"><%= actividad.getNombre() %></th>
-      <td><%= actividad.getFecha_inicio() %></td>
-      <td><%= actividad.getDias() %></td>
-      <td><a class="btn btn-primary" href="VerActividad?id=<%=actividad.getId()%>">VER</a></td>
-      <td><a class="btn btn-success" href="CrearActividad?id=<%=actividad.getId()%>">CREAR</a></td>
-      <td><a class="btn btn-danger" href="EliminarActividades?id=<%=actividad.getId()%>">ELIMINAR</a></td>
+      <th scope="row"><%=usuario.getId() %></th>
+      <td><%=usuario.getNombreApellido() %></td>
+      <td><%=usuario.getDni() %></td>
+      <td><%=usuario.getCodigo() %></td>
     </tr>
-    
-    <% } %>
-    
-  </tbody>
-</table>
-	
+   
+    </tbody>
+</table> 
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
