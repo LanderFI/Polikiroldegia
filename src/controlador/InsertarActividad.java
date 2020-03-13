@@ -24,7 +24,7 @@ public class InsertarActividad extends HttpServlet {
      */
     public InsertarActividad() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**
