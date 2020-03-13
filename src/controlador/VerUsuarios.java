@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import modelo.bean.Usuario;
 import modelo.dao.ModeloUsuario;
-
+//hola
 /**
- * Servlet implementation class VerUsuarios
+ * Servlet implementation class VerUsuarios 
  */
 @WebServlet("/VerUsuarios")
 public class VerUsuarios extends HttpServlet {
@@ -24,7 +24,7 @@ public class VerUsuarios extends HttpServlet {
      */
     public VerUsuarios() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**
