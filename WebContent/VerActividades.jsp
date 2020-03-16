@@ -47,7 +47,7 @@
       <td><%= actividad.getDias() %></td>
       <td><a class="btn btn-primary" href="VerActividad?id=<%=actividad.getId()%>">VER</a></td>
       <td><a class="btn btn-success" href="CrearActividad?id=<%=actividad.getId()%>">CREAR</a></td>
-      <td><a class="btn btn-danger" href="EliminarActividades?id=<%=actividad.getId()%>">ELIMINAR</a></td>
+      <td><a class="btn btn-danger" href="EliminarActividad?id=<%=actividad.getId()%>">ELIMINAR</a></td>
     </tr>
     
     <% } %>

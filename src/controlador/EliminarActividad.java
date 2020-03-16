@@ -37,7 +37,7 @@ public class EliminarActividad extends HttpServlet {
 		mActividad.delete(id);
 		
 		
-		response.sendRedirect("VerActividades");
+		response.sendRedirect("verActividades");
 	}
 
 	/**

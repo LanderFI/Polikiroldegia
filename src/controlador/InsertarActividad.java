@@ -1,6 +1,8 @@
 package controlador;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -43,17 +45,26 @@ public class InsertarActividad extends HttpServlet {
 		
 		//datuak jaso
 		String nombre = request.getParameter("nombre");
-		Date fecha_inicio = Date(request.getParameter("fecha_inicio"));
+		Date fecha_inicio = null;
 		String dias_semana = request.getParameter("dias_semana");
 		int horas = Integer.parseInt(request.getParameter("horas"));
 		int max_participantes = Integer.parseInt(request.getParameter("max_participantes"));
-		int precio = Integer.parseInt(request.getParameter("precio"));
+		Double precio = Double.parseDouble(request.getParameter("precio"));
 		
 				//sortu acgividade objektu bat
 		
 		Actividad actividad = new Actividad();
 				//jasotako datuekin setak egin
 		actividad.setNombre(nombre);
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		
+		try {
+			fecha_inicio = sdf.parse(request.getParameter("fecha_inicio"));
+		} catch (ParseException e) {
+			
+			e.printStackTrace();
+		}
 		actividad.setFecha_inicio(fecha_inicio);
 		actividad.setDias(dias_semana);
 		actividad.setHoras(horas);
@@ -73,12 +84,9 @@ public class InsertarActividad extends HttpServlet {
 		
 				
 		
-				response.sendRedirect("VerActividades");
+				response.sendRedirect("verActividades");
 	}
 
-	private Date Date(String parameter) {
 	
-		return null;
-	}
 
 }
