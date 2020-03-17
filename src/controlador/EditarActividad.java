@@ -33,6 +33,13 @@ public class EditarActividad extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int idActividad = Integer.parseInt(request.getParameter("id"));
+		ModeloActividad mActividad = new ModeloActividad();
+		
+		Actividad actividad = mActividad.get(idActividad);
+		
+		request.setAttribute("actividad", actividad);
+		
 		request.getRequestDispatcher("EditarActividad.jsp").forward(request, response);
 	}
 		

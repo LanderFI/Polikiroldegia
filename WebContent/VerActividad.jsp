@@ -57,9 +57,14 @@
 		</div>
 		<br>
 		<br>
+		<div class="container align-items-center">
 		<div class="row">
-			<div class="col text-center font-weight-bold"><button type="button" class="btn btn-primary">Editar</button></div>
-			<div class="col text-center font-weight-bold"><button type="button" class="btn btn-danger">Borrar</button></div>
+		
+			<div class="col"><div><a class="btn btn-info"  href="EditarActividad?id=<%=actividad.getId()%>">EDITAR</a></div></div>
+      		<div class="col"><div><a class="btn btn-danger" href="EliminarActividad?id=<%=actividad.getId()%>">ELIMINAR</a></div></div>
+      
+			
+		</div>
 		</div>
 		<br>
 	</div>
