@@ -6,14 +6,6 @@
     <%
 		Usuario usuario = (Usuario)request.getAttribute("usuario");
 	%>
-	
-    
-    
-   
-    
-    
-    
-     
     
 <!doctype html>
 <html lang="en">
@@ -25,36 +17,33 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>VER USUARIO</title>
+    <title>Editar Usuario</title>
   </head>
   <body>
-  
-    
-    <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Nombre_Apellido</th>
-      <th scope="col">DNI</th>
-      <th scope="col">Codigo</th>
-      <th scope="col">Editar</th>
-      <th scope="col">Eliminar</th>
-    </tr>
-  </thead>
-  <tbody>
-  
-    <tr>
-      <th scope="row"><%=usuario.getId() %></th>
-      <td><%=usuario.getNombreApellido() %></td>
-      <td><%=usuario.getDni() %></td>
-      <td><%=usuario.getCodigo() %></td>
-     	<td><a class="btn btn-info" href="EditarUsuario?id=<%=usuario.getId()%>">EDITAR</a></td>
-    	<td><a class="btn btn-danger" href="EliminarUsuario?id=<%=usuario.getId()%>">ELIMINAR</a></td>
-    </tr>
-    
-   
-    </tbody>
-</table> 
+    <div class="container mt-3">
+		<h1>Formulario para editar usuario</h1>
+
+		<form action="ModificarUsuario" method="GET">
+		<input type="hidden" name="id" value="<%=usuario.getId() %>">
+			<div class="form-group">
+				<label for="nombre_apellido">Nombre_apellido</label>
+				<input type="text" class="form-control" id="nombre_apellido" name="nombre_apellido" value="<%=usuario.getNombreApellido() %>">
+			</div>
+
+			<div class="form-group">
+				<label for="dni">Dni</label>
+				<input type="text" class="form-control" id="dni" name="dni" value="<%=usuario.getDni() %>">
+			</div>
+
+			<div class="form-group">
+				<label for="codigo">Codigo</label>
+				<input type="text" class="form-control" id="codigo" name="codigo" value="<%=usuario.getCodigo() %>">
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Click egin aldatzeko</button>
+		</form>
+
+	</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

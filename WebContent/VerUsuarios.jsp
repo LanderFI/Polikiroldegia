@@ -35,6 +35,7 @@
       <th scope="col">Codigo</th>
       <th scope="col">Ver</th>
       <th scope="col">Crear</th>
+      <th scope="col">Editar</th>
        <th scope="col">Eliminar</th>
     </tr>
   </thead>
@@ -52,6 +53,7 @@
       <td><%=usuario.getCodigo() %></td>
       <td><a class="btn btn-primary" href="VerUsuario?id=<%=usuario.getId()%>">VER</a></td>
       <td><a class="btn btn-success" href="CrearUsuario?id=<%=usuario.getId()%>">CREAR</a></td>
+      <td><a class="btn btn-info" href="EditarUsuario?id=<%=usuario.getId()%>">EDITAR</a></td>
       <td><a class="btn btn-danger" href="EliminarUsuario?id=<%=usuario.getId()%>">ELIMINAR</a></td>
     </tr>
     
