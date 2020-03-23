@@ -3,9 +3,7 @@
 	<%@ page import="modelo.bean.Actividad" %>
 	
 	
-	<%
-		Actividad actividad = (Actividad)request.getAttribute("actividad");
-	%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	
 <!doctype html>
 <html lang="en">
@@ -27,41 +25,41 @@
 	<div class="container mt-5 rounded border border-dark">
 		<div class="row">
 			<div class="col">
-				<h1 class="text-center"><%=actividad.getNombre() %></h1>
+				<h1 class="text-center">${actividad.getNombre()} </h1>
 			</div>
 		</div>
 		<br>
 		<div class="row">
 			<div class="col text-center font-weight-bold">Fecha Inicio</div>
-			<div class="col text-center font-weight-bold"><%=actividad.getFecha_inicio() %></div>
+			<div class="col text-center font-weight-bold">${actividad.getNombre()}</div>
 		</div>
 		<br>
 		<div class="row">
 			<div class="col text-center font-weight-bold">Dias Semana</div>
-			<div class="col text-center font-weight-bold"><%=actividad.getDias() %></div>
+			<div class="col text-center font-weight-bold">${actividad.getDias() }</div>
 		</div>
 		<br>
 		<div class="row">
 			<div class="col text-center font-weight-bold">Horas</div>
-			<div class="col text-center font-weight-bold"><%=actividad.getHoras() %></div>
+			<div class="col text-center font-weight-bold">${actividad.getHoras()} </div>
 		</div>
 		<br>
 		<div class="row">
 			<div class="col text-center font-weight-bold">Max Participantes</div>
-			<div class="col text-center font-weight-bold"><%=actividad.getMaxParticipantes() %></div>
+			<div class="col text-center font-weight-bold">${actividad.getMaxParticipantes() }</div>
 		</div>
 		<br>
 		<div class="row">
 			<div class="col text-center font-weight-bold">Precio</div>
-			<div class="col text-center font-weight-bold"><%=actividad.getPrecio() %></div>
+			<div class="col text-center font-weight-bold">${actividad.getPrecio()}</div>
 		</div>
 		<br>
 		<br>
 		<div class="container align-items-center">
 		<div class="row">
 		
-			<div class="col"><div><a class="btn btn-info"  href="EditarActividad?id=<%=actividad.getId()%>">EDITAR</a></div></div>
-      		<div class="col"><div><a class="btn btn-danger" href="EliminarActividad?id=<%=actividad.getId()%>">ELIMINAR</a></div></div>
+			<div class="col"><div><a class="btn btn-info"  href="EditarActividad?id=${actividad.getId() }">EDITAR</a></div></div>
+      		<div class="col"><div><a class="btn btn-danger" href="EliminarActividad?id=${actividad.getId() }">ELIMINAR</a></div></div>
       
 			
 		</div>
