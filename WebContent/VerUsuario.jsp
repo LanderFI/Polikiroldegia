@@ -3,17 +3,7 @@
     <%@ page import="modelo.bean.Usuario" %>
     
     
-    <%
-		Usuario usuario = (Usuario)request.getAttribute("usuario");
-	%>
-	
-    
-    
-   
-    
-    
-    
-     
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
 <!doctype html>
 <html lang="en">
@@ -44,12 +34,12 @@
   <tbody>
   
     <tr>
-      <th scope="row"><%=usuario.getId() %></th>
-      <td><%=usuario.getNombreApellido() %></td>
-      <td><%=usuario.getDni() %></td>
-      <td><%=usuario.getCodigo() %></td>
-     	<td><a class="btn btn-info" href="EditarUsuario?id=<%=usuario.getId()%>">EDITAR</a></td>
-    	<td><a class="btn btn-danger" href="EliminarUsuario?id=<%=usuario.getId()%>">ELIMINAR</a></td>
+      <th scope="row">${usuario.getId() }</th>
+      <td>${usuario.getNombreApellido() }</td>
+      <td>${usuario.getDni() }</td>
+      <td>${usuario.getCodigo() }</td>
+     	<td><a class="btn btn-info" href="EditarUsuario?id=${usuario.getId() }">EDITAR</a></td>
+    	<td><a class="btn btn-danger" href="EliminarUsuario?id=${usuario.getId() }">ELIMINAR</a></td>
     </tr>
     
    
