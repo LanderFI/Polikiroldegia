@@ -60,6 +60,7 @@
 		
 			<div class="col"><div><a class="btn btn-info"  href="EditarActividad?id=${actividad.getId() }">EDITAR</a></div></div>
       		<div class="col"><div><a class="btn btn-danger" href="EliminarActividad?id=${actividad.getId() }">ELIMINAR</a></div></div>
+      		
       
 			
 		</div>
