@@ -5,9 +5,7 @@
     <%@page import="modelo.bean.Usuario"%>
     
     
-    <%
-    ArrayList<Usuario> usuarios = (ArrayList<Usuario>)request.getAttribute("usuarios");
-    %>
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
     
     
@@ -40,24 +38,25 @@
     </tr>
   </thead>
   <tbody>
+  <c:forEach items="${usuarios }" var="usuario">
+  <tr>
+      <th><a href="VerUsuarios?id=${usuario.getId()}">${usuario.getNombreApellido() }</a></th>
+      <td>${usuario.getNombreApellido() }</td>
+      <td>${usuario.getDni() }</td>
+      <td>${usuario.getCodigo() }</td>
   
-  <% for(int i = 0; i < usuarios.size(); i++){
-	  Usuario usuario = usuarios.get(i);
-	  
-	  %>
+  
+  </c:forEach>
+  
  
-    <tr>
-      <th scope="row"><%=usuario.getId() %></th>
-      <td><%=usuario.getNombreApellido() %></td>
-      <td><%=usuario.getDni() %></td>
-      <td><%=usuario.getCodigo() %></td>
-      <td><a class="btn btn-primary" href="VerUsuario?id=<%=usuario.getId()%>">VER</a></td>
-      <td><a class="btn btn-success" href="CrearUsuario?id=<%=usuario.getId()%>">CREAR</a></td>
-      <td><a class="btn btn-info" href="EditarUsuario?id=<%=usuario.getId()%>">EDITAR</a></td>
-      <td><a class="btn btn-danger" href="EliminarUsuario?id=<%=usuario.getId()%>">ELIMINAR</a></td>
+    
+      <td><a class="btn btn-primary" href="VerUsuario?id=${usuario.getId() }">VER</a></td>
+      <td><a class="btn btn-success" href="CrearUsuario?id=${usuario.getId() }">CREAR</a></td>
+      <td><a class="btn btn-info" href="EditarUsuario?id=${usuario.getId() }">EDITAR</a></td>
+      <td><a class="btn btn-danger" href="EliminarUsuario?id=${usuario.getId() }">ELIMINAR</a></td>
     </tr>
     
-    <% } %>
+    
     
   </tbody>
 </table>
