@@ -5,9 +5,7 @@
     <%@page import="modelo.bean.Actividad" %>
     
     
-   <%
-   		ArrayList<Actividad> actividades = (ArrayList<Actividad>)request.getAttribute("actividades");
-   %> 
+   
    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
    
     
