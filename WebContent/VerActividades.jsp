@@ -8,6 +8,8 @@
    <%
    		ArrayList<Actividad> actividades = (ArrayList<Actividad>)request.getAttribute("actividades");
    %> 
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+   
     
 <!doctype html>
 <html lang="en">
@@ -37,19 +39,23 @@
   </thead>
   <tbody>
   
-  <% for(int i = 0; i < actividades.size(); i++){
-	  Actividad actividad = actividades.get(i);
-	  
-	  %>
+  
+  
+  
+  <c:forEach items="${actividades}" var="actividad">
+  
+	 
  
     <tr>
-      <th scope="row"><%= actividad.getNombre() %></th>
-      <td><%= actividad.getFecha_inicio() %></td>
-      <td><%= actividad.getDias() %></td>
-      <td><a class="btn btn-primary" href="VerActividad?id=<%=actividad.getId()%>">VER</a></td>
-      <td><a class="btn btn-success" href="CrearActividad?id=<%=actividad.getId()%>">CREAR</a></td>
-      <td><a class="btn btn-info"  href="EditarActividad?id=<%=actividad.getId()%>">EDITAR</a></td>
-      <td><a class="btn btn-danger" href="EliminarActividad?id=<%=actividad.getId()%>">ELIMINAR</a></td>
+      <th><a href="VerActividad?id=${actividad.getId()}">${actividad.getNombre()}</a></th>
+      <td>${actividad.getFecha_inicio() }</td>
+      <td>${actividad.getDias() }</td>
+      
+      
+      <td><a class="btn btn-primary" href="VerActividad?id=${actividad.getId() }">VER</a></td>
+      <td><a class="btn btn-success" href="CrearActividad?id=${actividad.getId() }">CREAR</a></td>
+      <td><a class="btn btn-info"  href="EditarActividad?id=${actividad.getId() }">EDITAR</a></td>
+      <td><a class="btn btn-danger" href="EliminarActividad?id=${actividad.getId() }">ELIMINAR</a></td>
       
 		
       
@@ -57,7 +63,7 @@
     	
     
     
-	<% } %>
+	</c:forEach>
   </tbody>
 </table>
 		
