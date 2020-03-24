@@ -67,6 +67,51 @@
 		</div>
 		<br>
 	</div>
+	
+	<div class="container mt-5 rounded border border-dark">
+		<div class="row">
+			<div class="col">
+				<h1>Formularioa</h1>
+					<form action="InscribirUsuario" method="POST">
+			
+						<input type="hidden" value="${actividad.id }" name="idActividad">
+				
+							<select name="idUsuario">
+				
+								<option value="0"></option>
+					
+									<c:forEach items="${usuarios}" var="usuario">
+										<td>${usuario.getNombreApellido() }</td>
+      									<td>${usuario.getDni() }</td>
+     		 							<td>${usuario.getCodigo() }</td>									
+									
+										<option value="${usuario.getId()}">${usuario.getNombreApellido()} - ${usuario.getCodigo()}</option>
+									</c:forEach>
+					
+							</select>
+				
+						<input type="submit" value="INSCRIBIR">
+					</form>
+			
+			</div>
+			<div class="col">
+				<h1>Usuarios inscritos</h1>
+				<table class="table">
+				<c:forEach items="${actividad.iscripciones}" var="inscripcion">
+					<tr>
+						<td>${inscripcion.usuario.getNombreApellido() } - ${inscripcion.usuario.getCodigo() }</td>
+						<td><a class="btn btn-danger" href="EliminarInscripcion?idactividad=${actividad.getId()}&idusuario=${inscripcion.usuario.getId()}">Cancelar inscripcion</a></td>
+					</tr>	
+				</c:forEach>	
+				</table>
+				
+			
+			</div>
+		</div>
+	
+	
+	
+	</div>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
