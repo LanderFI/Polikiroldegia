@@ -35,6 +35,7 @@
 			
 			
 			<button type="submit" class="btn btn-primary">Submit</button>
+			<div class="mt-2"><a href="VerUsuarios" class="btn btn-warning">Cancelar</a></div>
 		</form>
 
     <!-- Optional JavaScript -->
