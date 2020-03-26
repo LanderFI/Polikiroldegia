@@ -30,7 +30,8 @@
       <th scope="col">Fecha_inicio</th>
       <th scope="col">Dias semana</th>
       <th scope="col">
-      <th scope="col">Acciones
+      <th scope="col">Acciones</th>
+      <td><a class="btn btn-success" href="CrearActividad?id=${actividad.getId() }">CREAR</a></td>
       <th scope="col"><a href="Home" class="btn btn-warning">Volver a HOME</a></th>
     </tr>
   </thead>
@@ -50,7 +51,7 @@
       
       
       <td><a class="btn btn-primary" href="VerActividad?id=${actividad.getId() }">VER</a></td>
-      <td><a class="btn btn-success" href="CrearActividad?id=${actividad.getId() }">CREAR</a></td>
+      
       <td><a class="btn btn-info"  href="EditarActividad?id=${actividad.getId() }">EDITAR</a></td>
       <td><a class="btn btn-danger" href="EliminarActividad?id=${actividad.getId() }">ELIMINAR</a></td>
       
