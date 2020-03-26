@@ -29,6 +29,7 @@
       <th scope="col">Codigo</th>
       <th scope="col">Editar</th>
       <th scope="col">Eliminar</th>
+      <th scope="col"><a href="VerUsuarios" class="btn btn-warning">Volver</a></th>
     </tr>
   </thead>
   <tbody>
