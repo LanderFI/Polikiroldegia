@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       
   
-    <title>ACTIVIDADES</title>
+    <title>ACTIVIDADES</title>    
   </head>
   <body>
     <h1 class="text-center">ACTIVIDADES</h1>
@@ -31,7 +31,7 @@
       <th scope="col">Dias semana</th>
       <th scope="col">
       <th scope="col">Acciones
-      <th scope="col"></th>
+      <th scope="col"><a href="Home" class="btn btn-warning">Volver a HOME</a></th>
     </tr>
   </thead>
   <tbody>
