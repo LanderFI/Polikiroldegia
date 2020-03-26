@@ -37,6 +37,7 @@
       <th scope="col">Crear</th>
       <th scope="col">Editar</th>
        <th scope="col">Eliminar</th>
+       <th scope="col"><a href="Home" class="btn btn-warning">Volver a HOME</a></th>
     </tr>
   </thead>
   <tbody>
