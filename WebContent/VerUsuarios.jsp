@@ -1,13 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
    
-    <%@page import="java.util.ArrayList"%>
-    <%@page import="modelo.bean.Usuario"%>
-    
-    
-    <%
-    ArrayList<Usuario> usuarios = (ArrayList<Usuario>)request.getAttribute("usuarios");
-    %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
     
     
@@ -34,32 +28,28 @@
       <th scope="col">Dni</th>
       <th scope="col">Codigo</th>
       <th scope="col">Ver</th>
-      <th scope="col">Crear</th>
       <th scope="col">Editar</th>
        <th scope="col">Eliminar</th>
+       <th><a class="btn btn-secondary" href="CrearUsuario?id=${usuario.getId() }">CREAR</a></th>
        <th scope="col"><a href="Home" class="btn btn-warning">Volver a HOME</a></th>
     </tr>
   </thead>
   <tbody>
   
-  <% for(int i = 0; i < usuarios.size(); i++){
-	  Usuario usuario = usuarios.get(i);
-	  
-	  %>
+ <c:forEach items="${usuarios}" var="usuario">
  
     <tr>
-      <th scope="row"><%=usuario.getId() %></th>
-      <td><%=usuario.getNombreApellido() %></td>
-      <td><%=usuario.getDni() %></td>
-      <td><%=usuario.getCodigo() %></td>
-      <td><a class="btn btn-primary" href="VerUsuario?id=<%=usuario.getId()%>">VER</a></td>
-      <td><a class="btn btn-success" href="CrearUsuario?id=<%=usuario.getId()%>">CREAR</a></td>
-      <td><a class="btn btn-info" href="EditarUsuario?id=<%=usuario.getId()%>">EDITAR</a></td>
-      <td><a class="btn btn-danger" href="EliminarUsuario?id=<%=usuario.getId()%>">ELIMINAR</a></td>
+      <th scope="row">${usuario.getId() }</th>
+      <td>${usuario.getNombreApellido() }</td>
+      <td>${usuario.getDni() }</td>
+      <td>${usuario.getCodigo() }</td>
+      <td><a class="btn btn-primary" href="VerUsuario?id=${usuario.getId() }">VER</a></td>
+      <td><a class="btn btn-info" href="EditarUsuario?id=${usuario.getId() }">EDITAR</a></td>
+      <td><a class="btn btn-danger" href="EliminarUsuario?id=${usuario.getId() }">ELIMINAR</a></td>
     </tr>
     
-    <% } %>
-    
+    </c:forEach>
+
   </tbody>
 </table>
     
