@@ -29,11 +29,11 @@ public class EditarUsuario extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
+		int idUsuario = Integer.parseInt(request.getParameter("id"));
 		
 		ModeloUsuario mUsuario = new ModeloUsuario();
 		
-		Usuario usuario = mUsuario.get(id);
+		Usuario usuario = mUsuario.get(idUsuario);
 		
 		request.setAttribute("usuario", usuario);
 		
