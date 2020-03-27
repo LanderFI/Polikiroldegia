@@ -24,10 +24,12 @@
   <body>
     <h1 class="mt-2 text-center">ACTIVIDADES</h1>
     
-    <form class="form-inline ml-2 mb-2 mr-auto">
- 		<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-  		<button class="btn btn-outline-success btn-rounded btn-sm my-0" type="submit">Search</button>
-	</form>
+    <div class="col-4 offset-8 mb-2">
+				<form action="BuscarActividades" method="POST" class="form-inline">
+			<input type="text" name="query" class="form-control" placeholder="Buscar actividades">
+			<button type="submit" class="btn btn-outline-success mx-2">Buscar</button>
+		</form>
+	</div>
 	
 	<table class="table table-dark">
   <thead>
