@@ -20,6 +20,14 @@
   <body>
     
        <h1 class="text-center">USUARIOS</h1>
+       
+       <div class="col-4 offset-8 mb-2">
+				<form action="BuscarUsuarios" method="POST" class="form-inline">
+			<input type="text" name="query" class="form-control" placeholder="Buscar usuarios">
+			<button type="submit" class="btn btn-outline-success mx-2">Buscar</button>
+		</form>
+	</div>
+	
 	<table class="table table-warning">
   <thead>
     <tr class="bg-success">
