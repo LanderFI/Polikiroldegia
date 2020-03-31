@@ -31,6 +31,7 @@ public class ModificarUsuario extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		
+		
 		String nombre_apellido = request.getParameter("nombre_apellido");
 		String dni = request.getParameter("dni");
 		String codigo = request.getParameter("codigo");
@@ -39,7 +40,9 @@ public class ModificarUsuario extends HttpServlet {
 		Usuario usuario = new Usuario();
 		
 		usuario.setId(id);
+		
 		usuario.setNombreApellido(nombre_apellido);
+		usuario.setDni(dni);
 		usuario.setCodigo(codigo);
 		
 		ModeloUsuario mUsuario = new ModeloUsuario();
