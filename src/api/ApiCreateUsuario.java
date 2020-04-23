@@ -56,6 +56,7 @@ public class ApiCreateUsuario extends HttpServlet {
 		usuario.setDni(jsonObject.getString("dni"));
 		
 		
+		
 		ModeloUsuario mUsuario = new ModeloUsuario();
 		mUsuario.insert(usuario);
 		
