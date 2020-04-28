@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import modelo.bean.Usuario;
 import modelo.dao.ModeloUsuario;
+import modeloa.MiUsuario;
 
 /**
  * Servlet implementation class ApiCreateUsuario
@@ -50,17 +51,24 @@ public class ApiCreateUsuario extends HttpServlet {
 		JSONObject jsonObject = new JSONObject(jsonUsuario);
 		
 		
-		Usuario usuario = new Usuario();
+		MiUsuario usuario = new MiUsuario();
 		usuario.setNombreApellido(jsonObject.getString("nombreApellido"));
 		usuario.setCodigo(jsonObject.getString("codigo"));
 		usuario.setDni(jsonObject.getString("dni"));
 		
 		
-		
 		ModeloUsuario mUsuario = new ModeloUsuario();
-		mUsuario.insert(usuario);
+		
+		if(usuario.validar()) {
+			
+		}else if(!mUsuario.existCodigo("codigo")) {
+			mUsuario.insert(usuario);
+		}else {
+			response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+		}
 		
 		
+		  
 		try {
 			mUsuario.getConexion().close();
 		} catch (SQLException e) {
