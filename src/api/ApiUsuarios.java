@@ -45,7 +45,7 @@ public class ApiUsuarios extends HttpServlet {
 		String jsonString = JSONStringer.valueToString(usuarios);
 		
 		
-		PrintWriter out = response.getWriter();
+		PrintWriter out = new PrintWriter(new OutputStreamWriter(response.getOutputStream(), "UTF8"), true);
 		out.print(jsonString);
 		out.flush();
 		
