@@ -30,7 +30,7 @@ public class ApiUsuariosOrdenados extends HttpServlet {
      */
     public ApiUsuariosOrdenados() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**
