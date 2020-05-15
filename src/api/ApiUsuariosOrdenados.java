@@ -40,8 +40,8 @@ public class ApiUsuariosOrdenados extends HttpServlet {
 		ModeloUsuario mUsuario = new ModeloUsuario();
 		ArrayList<Usuario> usuarios = mUsuario.selectAll();
 		
-		//usuarios.sort(new NombreComparator());
-		usuarios.sort(new DniComparator());
+		usuarios.sort(new NombreComparator());
+		//usuarios.sort(new DniComparator());
 		
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setContentType("application/json");
