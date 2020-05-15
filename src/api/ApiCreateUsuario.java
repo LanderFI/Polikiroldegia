@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
+import modelo.MiUsuario;
 import modelo.bean.Usuario;
 import modelo.dao.ModeloUsuario;
-import modeloa.MiUsuario;
 
 /**
  * Servlet implementation class ApiCreateUsuario
